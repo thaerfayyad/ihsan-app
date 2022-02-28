@@ -47,6 +47,12 @@ class PermissionSeeder extends Seeder
         // Permission::create(['name' => 'read-products', 'guard_name'=> 'admin']);
         // Permission::create(['name' => 'update-product', 'guard_name'=> 'admin']);
         // Permission::create(['name' => 'delete-product', 'guard_name'=> 'admin']);
+        // Permission::create(['name' => 'create-order', 'guard_name'=> 'admin']);
+        // Permission::create(['name' => 'read-orders', 'guard_name'=> 'admin']);
+        // Permission::create(['name' => 'update-order', 'guard_name'=> 'admin']);
+        // Permission::create(['name' => 'delete-order', 'guard_name'=> 'admin']);
+
+
 
         //***************************User ****************************/
 
@@ -60,6 +66,12 @@ class PermissionSeeder extends Seeder
         // Permission::create(['name' => 'read-products', 'guard_name'=> 'user']);
         // Permission::create(['name' => 'update-product', 'guard_name'=> 'user']);
         // Permission::create(['name' => 'delete-product', 'guard_name'=> 'user']);
+
+
+        // Permission::create(['name' => 'create-order', 'guard_name'=> 'user']);
+        // Permission::create(['name' => 'read-orders', 'guard_name'=> 'user']);
+        // Permission::create(['name' => 'update-order', 'guard_name'=> 'user']);
+        // Permission::create(['name' => 'delete-order', 'guard_name'=> 'user']);
 
     }
 }

@@ -32,7 +32,7 @@
             <th>Price</th>
             <th>Quantity</th>
         </tr>
-        @foreach ($items as $key => $item)
+        @foreach ($items->products as $key => $item)
 
             <tr>
 

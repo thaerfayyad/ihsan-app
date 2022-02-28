@@ -9,6 +9,7 @@ use App\Http\Controllers\CategoryController;
 
 
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PdfController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProductController;
@@ -42,6 +43,7 @@ Route::view('/', 'cms.parent');
 
     Route::resource('categories', CategoryController::class);
     Route::resource('products',ProductController::class);
+    Route::resource('orders',OrderController::class);
     Route::resource('users',UserController::class);
     Route::resource('roles',RoleController::class);
     Route::resource('permissions', PermissionController::class);
@@ -73,4 +75,5 @@ Route::prefix('/dashboard')->group(function () {  //->middleware('guest:admin')
 });
 
 Route::get('/generate-pdf',[PdfController::class ,'generate_pdf'])->name('generate_pdf');
+Route::get('/generate-pdf-order/{id}',[PdfController::class ,'generate_pdf_order'])->name('generate_pdf_order');
 

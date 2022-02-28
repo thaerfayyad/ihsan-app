@@ -23,4 +23,8 @@ protected $appends = ['image_path'];
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function order(){
+        return $this->belongsToMany(Order::class,'order_product','product_id','order_id');
+    }
 }

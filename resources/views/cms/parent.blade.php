@@ -725,7 +725,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </span>
                                         </li>
                                         <li class="menu-item" aria-haspopup="true">
-                                            <a href="{{ route('products.create') }}" class="menu-link">
+                                            <a href="{{ route('orders.create') }}" class="menu-link">
                                                 <i class="menu-bullet menu-bullet-dot">
                                                     <span></span>
                                                 </i>
@@ -733,7 +733,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </a>
                                         </li>
                                         <li class="menu-item" aria-haspopup="true">
-                                            <a href="{{ route('products.index') }}" class="menu-link">
+                                            <a href="{{ route('orders.index') }}" class="menu-link">
                                                 <i class="menu-bullet menu-bullet-dot">
                                                     <span></span>
                                                 </i>
