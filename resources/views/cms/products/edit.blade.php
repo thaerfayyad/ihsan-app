@@ -1,9 +1,9 @@
 @extends('cms.parent')
 
-@section('page-name','Create Store')
-@section('main-page','Human Resources')
-@section('sub-page','Stores')
-@section('page-name-small','Create Store')
+@section('page-name','تعديل المنتج')
+@section('main-page','ادارة المحتوى')
+@section('sub-page','المنتاجات')
+@section('page-name-small','تعديل المنتج')
 
 @section('styles')
 
@@ -16,7 +16,7 @@
         <!--begin::Card-->
         <div class="card card-custom gutter-b example example-compact">
             <div class="card-header">
-                <h3 class="card-title">Create New Store</h3>
+                <h3 class="card-title">تعديل المنتج</h3>
                 {{-- <div class="card-toolbar">
                         <div class="example-tools justify-content-center">
                             <span class="example-toggle" data-toggle="tooltip" title="View code"></span>
@@ -27,7 +27,7 @@
             <!--begin::Form-->
             <form id="create-form">
                 <div class="card-body">
-                    <h3 class="text-dark font-weight-bold mb-10">Role</h3>
+                    {{--  <h3 class="text-dark font-weight-bold mb-10">Role</h3>  --}}
                     {{-- <div class="form-group row">
                         <label class="col-3 col-form-label">Role:<span class="text-danger">*</span></label>
                         <div class="col-lg-4 col-md-9 col-sm-12">
@@ -44,7 +44,7 @@
                     </div> --}}
 
                     <div class="separator separator-dashed my-10"></div>
-                    <h3 class="text-dark font-weight-bold mb-10">Basic Info</h3>
+                    {{--  <h3 class="text-dark font-weight-bold mb-10">Basic Info</h3>  --}}
                     {{--  <div class="form-group row">
                         <label class="col-3 col-form-label">City:<span class="text-danger">*</span></label>
                         <div class="col-lg-4 col-md-9 col-sm-12">
@@ -61,62 +61,62 @@
                     </div>  --}}
 
                     <div class="form-group row">
-                        <label class="col-3 col-form-label">Category:<span class="text-danger">*</span></label>
+                        <label class="col-3 col-form-label">القسم:<span class="text-danger">*</span></label>
                         <div class="col-lg-4 col-md-9 col-sm-12">
                             <div class="dropdown bootstrap-select form-control dropup">
                                 <select class="form-control selectpicker" data-size="7" id="category_id"
-                                    title="Choose one of the following..." tabindex="null" data-live-search="true">
+                                    title="اختار القسم..." tabindex="null" data-live-search="true">
                                     @foreach ($categories as $category)
                                     <option value="{{$category->id}}" @if($category->id == $product->category_id) selected @endif >{{$category->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
-                            <span class="form-text text-muted">Please select  category</span>
+                            <span class="form-text text-muted">رجاء اختيار القسم</span>
                         </div>
                     </div>
 
 
 
                     <div class="form-group row mt-4">
-                        <label class="col-3 col-form-label">Product Name:<span class="text-danger">*</span></label>
+                        <label class="col-3 col-form-label">اسم المنتج:<span class="text-danger">*</span></label>
                         <div class="col-9">
 
-                            <input type="text" class="form-control" id="product_name"   value="{{$product->name}}" placeholder="Enter your product name"  />
-                            <span class="form-text text-muted">Please enter your product name</span>
+                            <input type="text" class="form-control" id="product_name"   value="{{$product->name}}" placeholder="ادخل اسم المنتج"  />
+                            <span class="form-text text-muted"></span>
                         </div>
                     </div>
                     <div class="form-group row mt-4">
-                        <label class="col-3 col-form-label">Product Quantity:<span class="text-danger">*</span></label>
+                        <label class="col-3 col-form-label">كمية المنتج:<span class="text-danger">*</span></label>
                         <div class="col-9">
-                            <input type="number" class="form-control" id="quantity" placeholder="Enter manager name"  value="{{$product->quantity }}" />
-                            <span class="form-text text-muted">Please enter manager name</span>
+                            <input type="number" class="form-control" id="quantity" placeholder="كمية المنتج"  value="{{$product->quantity }}" />
+                            <span class="form-text text-muted"></span>
                         </div>
                     </div>
 
                     <div class="form-group row mt-4">
-                        <label class="col-3 col-form-label">Prodcuts Size:<span class="text-danger">*</span></label>
+                        <label class="col-3 col-form-label">حجم المنتج:<span class="text-danger">*</span></label>
                         <div class="col-9">
-                            <input type="number" class="form-control" id="size" placeholder="Enter nontact number" value="{{$product->size}}"/>
-                            <span class="form-text text-muted">Please enter copmpany nontact number</span>
+                            <input type="number" class="form-control" id="size" placeholder="ادخل حجم المنتج" value="{{$product->size}}"/>
+                            <span class="form-text text-muted"></span>
                         </div>
                     </div>
                     <div class="form-group row mt-4">
-                        <label class="col-3 col-form-label">Prodcuts Price:<span class="text-danger">*</span></label>
+                        <label class="col-3 col-form-label">سعر المنتج:<span class="text-danger">*</span></label>
                         <div class="col-9">
-                            <input type="number" class="form-control" id="price" placeholder="Enter nontact number" value="{{$product->price}}"/>
-                            <span class="form-text text-muted">Please enter copmpany nontact number</span>
+                            <input type="number" class="form-control" id="price" placeholder="سعر المنتج" value="{{$product->price}}"/>
+                            <span class="form-text text-muted"></span>
                         </div>
                     </div>
 
 
                     <div class="separator separator-dashed my-10"></div>
-                    <h3 class="text-dark font-weight-bold mb-10">Details</h3>
+                    <h3 class="text-dark font-weight-bold mb-10">الوصف</h3>
 
                     <div class="form-group row mt-4">
-                        <label class="col-3 col-form-label">Description:</label>
+                        <label class="col-3 col-form-label">الوصف:</label>
                         <div class="col-9">
                             <textarea class="summernote" id="description">{{$product->description ?? ''}}</textarea>
-                            <span class="form-text text-muted">Please description about your product</span>
+                            <span class="form-text text-muted">رجاء ادخال الوصف</span>
                         </div>
                     </div>
 
@@ -124,7 +124,7 @@
 
 
                     <div class="form-group row">
-                        <label class="col-3 col-form-label">Image:<span class="text-danger">*</span></label>
+                        <label class="col-3 col-form-label">صورة المنتج:<span class="text-danger">*</span></label>
                         <div class="col-9">
                             <div class="image-input image-input-empty image-input-outline" id="kt_image_5"
                                 style="background-image:@if(!$product->image)   url({{asset('cms/assets/media/users/blank.png')}})   @else   url('{{url(Storage::url($product->image))}}') @endif">
@@ -154,10 +154,10 @@
                         </div>
                     </div>
                     <div class="separator separator-dashed my-10"></div>
-                    <h3 class="text-dark font-weight-bold mb-10">Settings</h3>
+                    <h3 class="text-dark font-weight-bold mb-10">الاعدادات</h3>
 
                     <div class="form-group row">
-                        <label class="col-3 col-form-label">Active Account</label>
+                        <label class="col-3 col-form-label">حالة المنتج</label>
                         <div class="col-3">
                             <span class="switch switch-outline switch-icon switch-success">
                                 <label>
@@ -177,8 +177,8 @@
 
                         </div>
                         <div class="col-9">
-                            <button type="button" onclick="performEdit()" class="btn btn-primary mr-2">Submit</button>
-                            <button type="reset" class="btn btn-secondary">Cancel</button>
+                            <button type="button" onclick="performEdit()" class="btn btn-primary mr-2">اضافة</button>
+                            <button type="reset" class="btn btn-secondary">الغاء</button>
                         </div>
                     </div>
                 </div>

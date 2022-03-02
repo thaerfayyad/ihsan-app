@@ -1,9 +1,9 @@
 @extends('cms.parent')
 
-@section('page-name','Create Product')
-@section('main-page',' Content Mangmant ')
-@section('sub-page','Products')
-@section('page-name-small','Create Product')
+@section('page-name','اضافة منتج')
+@section('main-page','ادارة المحتوى')
+@section('sub-page','المنتجات')
+@section('page-name-small','انشاء منتج جديد')
 
 @section('styles')
 
@@ -16,7 +16,7 @@
         <!--begin::Card-->
         <div class="card card-custom gutter-b example example-compact">
             <div class="card-header">
-                <h3 class="card-title">Create New Product</h3>
+                <h3 class="card-title">انشاء منتج جديد</h3>
                 {{-- <div class="card-toolbar">
                         <div class="example-tools justify-content-center">
                             <span class="example-toggle" data-toggle="tooltip" title="View code"></span>
@@ -48,45 +48,45 @@
            >
 
                     <div class="form-group row">
-                        <label class="col-3 col-form-label">Category:<span class="text-danger">*</span></label>
+                        <label class="col-3 col-form-label">الاقسام:<span class="text-danger">*</span></label>
                         <div class="col-lg-4 col-md-9 col-sm-12">
                             <div class="dropdown bootstrap-select form-control dropup">
                                 <select class="form-control selectpicker" data-size="7" id="category_id"
-                                    title="Choose one of the following..." tabindex="null" data-live-search="true">
+                                    title="اختار القسم..." tabindex="null" data-live-search="true">
                                     @foreach ($categories as $category)
                                     <option value="{{$category->id}}">{{$category->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
-                            <span class="form-text text-muted">Please select  category</span>
+                            <span class="form-text text-muted">رجاء اخيار القسم</span>
                         </div>
                     </div>
                     <div class="form-group row mt-4">
-                        <label class="col-3 col-form-label">Product  Name:<span class="text-danger">*</span></label>
+                        <label class="col-3 col-form-label">اسم المنتج:<span class="text-danger">*</span></label>
                         <div class="col-9">
-                            <input type="text" class="form-control" id="name" placeholder="Enter manager name" />
-                            <span class="form-text text-muted">Please enter Product name</span>
+                            <input type="text" class="form-control" id="name" placeholder="ادخل اسم المنتج" />
+                            <span class="form-text text-muted">رجاء ادخال اسم المنتج</span>
                         </div>
                     </div>
                     <div class="form-group row mt-4">
-                        <label class="col-3 col-form-label">Product  Quantity:<span class="text-danger">*</span></label>
+                        <label class="col-3 col-form-label">كمية المنتج:<span class="text-danger">*</span></label>
                         <div class="col-9">
-                            <input type="number" class="form-control" id="quantity" placeholder="Enter product quantity" />
-                            <span class="form-text text-muted">Please enter Product name</span>
+                            <input type="number" class="form-control" id="quantity" placeholder="كميتة المنتج" />
+                            <span class="form-text text-muted">رجاء ادخال كمية النتج</span>
                         </div>
                     </div>
                     <div class="form-group row mt-4">
-                        <label class="col-3 col-form-label">Product  Size:<span class="text-danger">*</span></label>
+                        <label class="col-3 col-form-label">حجم المنتج:<span class="text-danger">*</span></label>
                         <div class="col-9">
-                            <input type="number" class="form-control" id="size" placeholder="Enter product quantity" />
-                            <span class="form-text text-muted">Please enter Product name</span>
+                            <input type="number" class="form-control" id="size" placeholder="ادخل جحم المنتج" />
+                            <span class="form-text text-muted">رجاء ادخال حجم المنتج</span>
                         </div>
                     </div>
                     <div class="form-group row mt-4">
-                        <label class="col-3 col-form-label">Product  Price:<span class="text-danger">*</span></label>
+                        <label class="col-3 col-form-label">سعر المنتج:<span class="text-danger">*</span></label>
                         <div class="col-9">
-                            <input type="number" class="form-control" id="price" placeholder="Enter product quantity" />
-                            <span class="form-text text-muted">Please enter Product name</span>
+                            <input type="number" class="form-control" id="price" placeholder="ادخل سعر المنتج" />
+                            <span class="form-text text-muted">ادخل سعر المنتج</span>
                         </div>
                     </div>
 
@@ -95,10 +95,10 @@
                     <h3 class="text-dark font-weight-bold mb-10">Description</h3>
 
                     <div class="form-group row mt-4">
-                        <label class="col-3 col-form-label">Description:</label>
+                        <label class="col-3 col-form-label">الوصف:</label>
                         <div class="col-9">
                             <textarea class="summernote" id="description">{{$page->description ?? ''}}</textarea>
-                            <span class="form-text text-muted">Please description about your product</span>
+                            <span class="form-text text-muted">رجاء ادخال وصف المنتج</span>
                         </div>
                     </div>
 
@@ -108,7 +108,7 @@
 
 
                     <div class="form-group row">
-                        <label class="col-3 col-form-label">Image:<span class="text-danger">*</span></label>
+                        <label class="col-3 col-form-label">صورة المنتج:<span class="text-danger">*</span></label>
                         <div class="col-9">
                             <div class="image-input image-input-empty image-input-outline" id="kt_image_5"
                                 style="background-image: url({{asset('cms/assets/media/users/blank.png')}})">
@@ -138,10 +138,10 @@
                         </div>
                     </div>
                     <div class="separator separator-dashed my-10"></div>
-                    <h3 class="text-dark font-weight-bold mb-10">Settings</h3>
+                    <h3 class="text-dark font-weight-bold mb-10">الاعدادت</h3>
 
                     <div class="form-group row">
-                        <label class="col-3 col-form-label">Active Account</label>
+                        <label class="col-3 col-form-label">حالة المنتج</label>
                         <div class="col-3">
                             <span class="switch switch-outline switch-icon switch-success">
                                 <label>
@@ -158,8 +158,8 @@
 
                         </div>
                         <div class="col-9">
-                            <button type="button" onclick="performStore()" class="btn btn-primary mr-2">Submit</button>
-                            <button type="reset" class="btn btn-secondary">Cancel</button>
+                            <button type="button" onclick="performStore()" class="btn btn-primary mr-2">اضافة</button>
+                            <button type="reset" class="btn btn-secondary">الغاء</button>
                         </div>
                     </div>
                 </div>

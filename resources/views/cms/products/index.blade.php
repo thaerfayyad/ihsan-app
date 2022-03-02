@@ -1,9 +1,9 @@
 @extends('cms.parent')
 
-@section('page-name', 'All Products')
-@section('main-page', 'Content mangment')
-@section('sub-page', 'Prodcuts')
-@section('page-name-small', 'All Products')
+@section('page-name', 'المنتجات')
+@section('main-page', 'ادارة المحتوى')
+@section('sub-page', 'المنتجات')
+@section('page-name-small', 'المنتجات')
 
 @section('styles')
 
@@ -15,13 +15,12 @@
         <!--begin::Header-->
         <div class="card-header border-0 py-5">
             <h3 class="card-title align-items-start flex-column">
-                <span class="card-label font-weight-bolder text-dark">prodcuts</span>
-                <span class="text-muted mt-3 font-weight-bold font-size-sm">Manage Products</span>
+                <span class="card-label font-weight-bolder text-dark">المنتجات</span>
+                <span class="text-muted mt-3 font-weight-bold font-size-sm"></span>
             </h3>
             <div class="card-toolbar d-inline-block">
-                <a href="{{ route('products.create') }}" class="btn btn-info font-weight-bolder font-size-sm">New
-                    product</a>
-                <a href="{{ route('generate_pdf') }}" target="_blank" class="btn btn-info font-weight-bolder font-size-sm">Export To pdf</a>
+                <a href="{{ route('products.create') }}" class="btn btn-info font-weight-bolder font-size-sm"> اضافة منتج جديد</a>
+                <a href="{{ route('generate_pdf') }}" target="_blank" class="btn btn-info font-weight-bolder font-size-sm">تصدير لملف pdf </a>
 
             </div>
 
@@ -34,16 +33,16 @@
                 <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_2">
                     <thead>
                         <tr class="text-uppercase">
-                            <th style="min-width: 150px"> Image</th>
-                            <th style="min-width: 150px"> Name </th>
+                            <th style="min-width: 150px"> الصورة</th>
+                            <th style="min-width: 150px">  الاسم</th>
                             {{-- <th style="min-width: 120px">Email</th> --}}
-                            <th style="min-width: 120px">Category </th>
-                            <th style="min-width: 120px">Status</th>
+                            <th style="min-width: 120px">القسم </th>
+                            <th style="min-width: 120px">الحالة</th>
 
-                            <th style="min-width: 120px">Price</th>
-                            <th style="min-width: 120px">Quantity</th>
-                            <th style="min-width: 120px">Size</th>
-                            <th class="pr-0 text-right" style="min-width: 170px">action</th>
+                            <th style="min-width: 120px">السعر</th>
+                            <th style="min-width: 120px">الكمية</th>
+                            <th style="min-width: 120px">الحجم</th>
+                            <th class="pr-0 text-right" style="min-width: 170px">العمليات</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -1,9 +1,9 @@
 @extends('cms.parent')
 
-@section('page-name','All Categories')
-@section('main-page','Content Management')
-@section('sub-page','Categories')
-@section('page-name-small','All Categories')
+@section('page-name','الاقسام')
+@section('main-page','ادارة المحتوى')
+@section('sub-page','الاقسام')
+@section('page-name-small','الاقسام')
 
 @section('styles')
 
@@ -15,11 +15,11 @@
     <!--begin::Header-->
     <div class="card-header border-0 py-5">
         <h3 class="card-title align-items-start flex-column">
-            <span class="card-label font-weight-bolder text-dark">Categories</span>
-            <span class="text-muted mt-3 font-weight-bold font-size-sm">Manage system categories</span>
+            <span class="card-label font-weight-bolder text-dark">الاقسام</span>
+            <span class="text-muted mt-3 font-weight-bold font-size-sm"> نظام ادارة المحنوى</span>
         </h3>
         <div class="card-toolbar">
-            <a href="{{route('categories.create')}}" class="btn btn-info font-weight-bolder font-size-sm">New Categories</a>
+            <a href="{{route('categories.create')}}" class="btn btn-info font-weight-bolder font-size-sm">اضافة قسم جديد</a>
         </div>
     </div>
     <!--end::Header-->
@@ -30,14 +30,14 @@
             <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_2">
                 <thead>
                     <tr class="text-uppercase">
-                        <th class="pl-0" style="min-width: 100px">id</th>
-                        <th style="min-width: 120px">Name</th>
-                        <th style="min-width: 120px">Description</th>
-                        <th style="min-width: 150px">Status</th>
+                        <th class="pl-0" style="min-width: 100px">رقم التسلسلي  </th>
+                        <th style="min-width: 120px">الاسم</th>
+                        <th style="min-width: 120px">الوصف</th>
+                        <th style="min-width: 150px">الحالة</th>
 
-                        <th style="min-width: 150px">Created At</th>
-                        <th style="min-width: 150px">Updated At</th>
-                        <th class="pr-0 text-right" style="min-width: 180px">settings</th>
+                        <th style="min-width: 150px">تاريج الانشاء</th>
+                        <th style="min-width: 150px">تاريخ التحديث</th>
+                        <th class="pr-0 text-right" style="min-width: 180px">العمليات</th>
 
 
                     </tr>

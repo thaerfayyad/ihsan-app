@@ -1,9 +1,9 @@
 @extends('cms.parent')
 
-@section('page-name','Create Category')
-@section('main-page','Content Management')
-@section('sub-page','Categories')
-@section('page-name-small','Create Category')
+@section('page-name','اضافة قسم')
+@section('main-page','ادارة المحتوى')
+@section('sub-page','الاقسام')
+@section('page-name-small','اضافة  قسم')
 
 @section('styles')
 
@@ -16,7 +16,7 @@
         <!--begin::Card-->
         <div class="card card-custom gutter-b example example-compact">
             <div class="card-header">
-                <h3 class="card-title">Create New Category</h3>
+                <h3 class="card-title">اضافة قسم جديد</h3>
                 {{-- <div class="card-toolbar">
                         <div class="example-tools justify-content-center">
                             <span class="example-toggle" data-toggle="tooltip" title="View code"></span>
@@ -30,23 +30,23 @@
 
                     {{-- <h3 class="text-dark font-weight-bold mb-10">Basic Info</h3> --}}
                     <div class="form-group row mt-4">
-                        <label class="col-3 col-form-label">Name:<span class="text-danger">*</span></label>
+                        <label class="col-3 col-form-label">الاسم:<span class="text-danger">*</span></label>
                         <div class="col-9">
-                            <input type="text" class="form-control" id="name" placeholder="Enter Category name" />
-                            <span class="form-text text-muted">Please enter category  name</span>
+                            <input type="text" class="form-control" id="name" placeholder="ادخل اسم القسم" />
+                            <span class="form-text text-muted">رجاء ادخال اسم القسم</span>
                         </div>
                     </div>
 
                     <div class="form-group row mt-4">
-                        <label class="col-3 col-form-label">Descriptipn:<span class="text-danger">*</span></label>
+                        <label class="col-3 col-form-label">الوصف:<span class="text-danger">*</span></label>
                         <div class="col-9">
-                            <input type="text" class="form-control" id="description" placeholder="Enter descriptipn" />
-                            <span class="form-text text-muted">Please enter category descriptipn  </span>
+                            <input type="text" class="form-control" id="description" placeholder="ادخل الوصف" />
+                            <span class="form-text text-muted">رجاء ادخال الوصف  </span>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-3 col-form-label">Status</label>
+                        <label class="col-3 col-form-label">الحالة</label>
                         <div class="col-3">
                             <span class="switch switch-outline switch-icon switch-success">
                                 <label>
@@ -63,8 +63,8 @@
 
                         </div>
                         <div class="col-9">
-                            <button type="button" onclick="performStore()" class="btn btn-primary mr-2">Submit</button>
-                            <button type="reset" class="btn btn-secondary">Cancel</button>
+                            <button type="button" onclick="performStore()" class="btn btn-primary mr-2">اضافة</button>
+                            <button type="reset" class="btn btn-secondary">الغاء</button>
                         </div>
                     </div>
                 </div>

@@ -1,9 +1,9 @@
 @extends('cms.parent')
 
-@section('page-name', 'All Orders')
-@section('main-page', 'Content mangment')
-@section('sub-page', 'Orders')
-@section('page-name-small', 'All Orders')
+@section('page-name', 'الطلبات')
+@section('main-page', 'ادارة المحتوى')
+@section('sub-page', 'الطلبات')
+@section('page-name-small', 'كل الطلبات')
 
 @section('styles')
 
@@ -15,8 +15,8 @@
         <!--begin::Header-->
         <div class="card-header border-0 py-5">
             <h3 class="card-title align-items-start flex-column">
-                <span class="card-label font-weight-bolder text-dark">Orders</span>
-                <span class="text-muted mt-3 font-weight-bold font-size-sm">Manage Orders</span>
+                <span class="card-label font-weight-bolder text-dark">الطلبات</span>
+                <span class="text-muted mt-3 font-weight-bold font-size-sm"></span>
             </h3>
 
 
@@ -31,12 +31,12 @@
                         <tr class="text-uppercase">
 
 
-                            <th style="min-width: 120px">ID </th>
-                            <th style="min-width: 120px">User </th>
-                            <th style="min-width: 120px">Adress </th>
-                            <th style="min-width: 120px">Stauts </th>
-                            <th style="min-width: 120px">Order No.</th>
-                            <th class="pr-0 text-right" style="min-width: 170px; ">action</th>
+                            <th style="min-width: 120px">رقم التسلسلي </th>
+                            <th style="min-width: 120px">المستخدم </th>
+                            <th style="min-width: 120px">العنوان </th>
+                            <th style="min-width: 120px">الحالة</th>
+                            <th style="min-width: 120px">رقم الطلب</th>
+                            <th class="pr-0 text-right" style="min-width: 170px; ">العمليات</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -76,7 +76,8 @@
                         <td>
                             <span
                             class="label label-lg  label-inline">
-                           {{ $order->created_at->format('Y') }}</span>
+                                {{ $order->order_no }}
+                            </span>
 
                         </td>
 

@@ -1,9 +1,9 @@
 @extends('cms.parent')
 
-@section('page-name', 'Order')
-@section('main-page', 'Content mangment')
-@section('sub-page', 'Prders')
-@section('page-name-small', 'All Prders')
+@section('page-name', 'الطلب')
+@section('main-page', 'ادرة المحتوى')
+@section('sub-page', 'الطلب')
+@section('page-name-small', '')
 
 @section('styles')
 
@@ -15,14 +15,14 @@
         <!--begin::Header-->
         <div class="card-header border-0 py-5">
             <h3 class="card-title align-items-start flex-column">
-                <span class="card-label font-weight-bolder text-dark">Oders</span>
-                <span class="text-muted mt-3 font-weight-bold font-size-sm">Manage Order</span>
+                <span class="card-label font-weight-bolder text-dark">الطلب</span>
+                <span class="text-muted mt-3 font-weight-bold font-size-sm"></span>
             </h3>
             <div class="card-toolbar d-inline-block">
 
 
                 <a href="{{ route('generate_pdf_order',$orders->id) }}" target="_blank"
-                    class="btn btn-info font-weight-bolder font-size-sm">Export To pdf</a>
+                    class="btn btn-info font-weight-bolder font-size-sm"> تصدير لملف pdf</a>
 
             </div>
 
@@ -38,13 +38,13 @@
                     <thead>
                         <tr class="text-uppercase">
 
-                            <th > ID </th>
+                            <th > رقم التسلسلي </th>
 
-                            <th > Product </th>
-                            <th > Size </th>
-                            <th > Price </th>
+                            <th > المنتج </th>
+                            <th > الحجم </th>
+                            <th > السعر </th>
                             {{-- <th style="min-width: 120px">Email</th> --}}
-                            <th >Quantity </th>
+                            <th >الكمية </th>
 
 
                         </tr>

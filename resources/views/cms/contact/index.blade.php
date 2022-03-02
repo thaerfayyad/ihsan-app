@@ -1,9 +1,9 @@
 @extends('cms.parent')
 
-@section('page-name','المستخدمين')
-@section('main-page','')
-@section('sub-page','المستخدمين')
-@section('page-name-small','المستخدمين')
+@section('page-name','All contacts')
+@section('main-page','Human Resources')
+@section('sub-page','contacts')
+@section('page-name-small','All contacts')
 
 @section('styles')
 
@@ -15,8 +15,8 @@
     <!--begin::Header-->
     <div class="card-header border-0 py-5">
         <h3 class="card-title align-items-start flex-column">
-            <span class="card-label font-weight-bolder text-dark">المستخدمين</span>
-            <span class="text-muted mt-3 font-weight-bold font-size-sm">ادارة المستخدمين</span>
+            <span class="card-label font-weight-bolder text-dark">contacts</span>
+            <span class="text-muted mt-3 font-weight-bold font-size-sm">Manage system contacts</span>
         </h3>
     </div>
     <!--end::Header-->
@@ -27,37 +27,34 @@
             <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_2">
                 <thead>
                     <tr class="text-uppercase">
-                        <th style="min-width: 120px">الاسم</th>
-                        <th style="min-width: 150px">الموبايل</th>
-                        <th style="min-width: 150px">بريد الكتروني</th>
+                        <th style="min-width: 120px">name</th>
+
+                        <th style="min-width: 150px">Email</th>
                         {{--  <th style="min-width: 150px">Verified</th>
                         <th style="min-width: 130px">status</th>  --}}
-                        <th class="pr-0 text-right" style="min-width: 160px">العمليات</th>
+                        <th class="pr-0 text-right" style="min-width: 160px">action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($users as $user)
+                    @foreach ($contacts as $contact)
                     <tr>
                         <td class="pl-0">
                             <span
-                                class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$user->name ?? '-'}}</span>
+                                class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$contact->name ?? '-'}}</span>
                             <span class="text-muted font-weight-bold"></span>
                         </td>
-                        <td>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$user->mobile}}</span>
-                            <span class="text-muted font-weight-bold"></span>
-                        </td>
+
                         <td>
                             <span
-                                class="text-dark-50 font-weight-bolder d-block font-size-lg">{{$user->email}}</span>
+                                class="text-dark-50 font-weight-bolder d-block font-size-lg">{{$contact->email}}</span>
                         </td>
                         {{--  <td>
                             <span
-                                class="label label-lg @if($user->verified) label-light-success @else label-light-danger @endif label-inline">{{$user->verified_status}}</span>
+                                class="label label-lg @if($contact->verified) label-light-success @else label-light-danger @endif label-inline">{{$contact->verified_status}}</span>
                         </td>
                         <td>
                             <span
-                                class="label label-lg @if($user->active) label-light-info @else label-light-wanining @endif label-inline">{{$user->active_status}}</span>
+                                class="label label-lg @if($contact->active) label-light-info @else label-light-wanining @endif label-inline">{{$contact->active_status}}</span>
                         </td>  --}}
                         <td class="pr-0 text-right">
                             <a href="#" class="btn btn-icon btn-light btn-hover-primary btn-sm">
@@ -78,8 +75,8 @@
                                     <!--end::Svg Icon-->
                                 </span>
                             </a>
-                            @can('Delete-User')
-                            <a href="#" onclick="performDestroy('{{$user->id}}', this)"
+                            @can('Delete-contact')
+                            <a href="#" onclick="performDestroy('{{$contact->id}}', this)"
                                 class="btn btn-icon btn-light btn-hover-primary btn-sm">
                                 <span class="svg-icon svg-icon-md svg-icon-primary">
                                     <!--begin::Svg Icon | path:assets/media/svg/icons/General/Trash.svg-->
@@ -99,7 +96,7 @@
                                 </span>
                             </a>
                             @endcan
-                            {{--  onclick="performDestroy('{{$user->id}}', this)"  --}}
+                            {{--  onclick="performDestroy('{{$contact->id}}', this)"  --}}
                         </td>
                     </tr>
                     @endforeach
@@ -116,7 +113,7 @@
 <script src="{{asset('assets/js/pages/widgets.js')}}"></script>
 <script>
     function performDestroy(id,reference) {
-        confirmDestroy('/cms/admin/users', id, reference);
+        confirmDestroy('/cms/dashboard/contacts', id, reference);
     }
 </script>
 @endsection

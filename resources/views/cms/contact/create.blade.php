@@ -1,9 +1,9 @@
 @extends('cms.parent')
 
-@section('page-name','اضافة مستخدم')
-@section('main-page','')
-@section('sub-page','مستخدمين')
-@section('page-name-small','اضافة مستخمد')
+@section('page-name','Create User')
+@section('main-page','Human Resources')
+@section('sub-page','Users')
+@section('page-name-small','Create User')
 
 @section('styles')
 
@@ -16,7 +16,7 @@
         <!--begin::Card-->
         <div class="card card-custom gutter-b example example-compact">
             <div class="card-header">
-                <h3 class="card-title">اضافة مستخمد جديد</h3>
+                <h3 class="card-title">Create New User</h3>
                 {{-- <div class="card-toolbar">
                         <div class="example-tools justify-content-center">
                             <span class="example-toggle" data-toggle="tooltip" title="View code"></span>
@@ -45,28 +45,28 @@
                     <div class="separator separator-dashed my-10"></div>
                     <h3 class="text-dark font-weight-bold mb-10">Basic Info</h3>
                     <div class="form-group row mt-4">
-                        <label class="col-3 col-form-label">الاسم:<span class="text-danger">*</span></label>
+                        <label class="col-3 col-form-label">Full Name:<span class="text-danger">*</span></label>
                         <div class="col-9">
-                            <input type="text" class="form-control" id="name" placeholder="ادخل الاسم" />
-                            <span class="form-text text-muted">رجاء ادخل الاسم</span>
+                            <input type="text" class="form-control" id="name" placeholder="Enter full name" />
+                            <span class="form-text text-muted">Please enter your full name</span>
                         </div>
                     </div>
                     <div class="form-group row mt-4">
-                        <label class="col-3 col-form-label">رقم الموبايل:<span class="text-danger">*</span></label>
+                        <label class="col-3 col-form-label">Mobile:<span class="text-danger">*</span></label>
                         <div class="col-9">
-                            <input type="tel" class="form-control" id="mobile" placeholder="ادخل رقم الموبايل" />
-                            <span class="form-text text-muted">رجاء ادخال رقم الموبايل</span>
+                            <input type="tel" class="form-control" id="mobile" placeholder="Enter mobile" />
+                            <span class="form-text text-muted">Please enter your mobile number</span>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-3 col-form-label">عنوان البريد:<span class="text-danger">*</span></label>
+                        <label class="col-3 col-form-label">Email address:<span class="text-danger">*</span></label>
                         <div class="col-9">
-                            <input type="email" class="form-control" id="email" placeholder="عنوان البريد" />
-                            <span class="form-text text-muted">ادخل عنوان البريد</span>
+                            <input type="email" class="form-control" id="email" placeholder="Enter email" />
+                            <span class="form-text text-muted">We ll never share your email with anyone else</span>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-3 col-form-label">حالة المستخدم</label>
+                        <label class="col-3 col-form-label">Active Account</label>
                         <div class="col-3">
                             <span class="switch switch-outline switch-icon switch-success">
                                 <label>
@@ -83,8 +83,8 @@
 
                         </div>
                         <div class="col-9">
-                            <button type="button" onclick="performStore()" class="btn btn-primary mr-2">اضافة</button>
-                            <button type="reset" class="btn btn-secondary">الغاء</button>
+                            <button type="button" onclick="performStore()" class="btn btn-primary mr-2">Submit</button>
+                            <button type="reset" class="btn btn-secondary">Cancel</button>
                         </div>
                     </div>
                 </div>

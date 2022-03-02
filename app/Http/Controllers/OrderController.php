@@ -22,7 +22,7 @@ class OrderController extends Controller
         //
         $data = Order::with('products')->get();
 
-        return response()->view('cms.orders.index',['orders'=>$data]);
+        return response()->view('cms.orders.index', ['orders' => $data]);
     }
 
     /**
@@ -48,38 +48,43 @@ class OrderController extends Controller
             'address_address' => 'nullable|string',
             'address_latitude' => 'nullable|string',
             'address_longitude' => 'nullable|string',
-            'status' => 'required|boolean',
-
-            'product_id' => 'required|array',
+            'product_id' => 'required',
+            'user_id' => 'required',
         ]);
 
-        if ($validator->fails()) {
-            $request_data = $request->except(['order_id', 'price', 'quantity']);
+        if (!$validator->fails()) {
+            $order = new  Order();
 
             $order_no = Order::orderBy('id', 'DESC')->pluck('id')->first();
             if($order_no == null or $order_no == ""){
             #If Table is Empty
-            $order_no = 0001;
+            $order_no =00001;
             }
             else{
             #If Table has Already some Data
             $order_no = $order_no + 1;
           }
 
-          $request_data['order_no']    = $order_no;
-          $order = Order::create($request_data);
+
+            $order-> address_address = $request->input('address_latitude');
+            $order-> address_latitude = $request->input('address_latitude');
+            $order-> address_longitude = $request->input('address_longitude');
+            $order-> product_id = $request->input('product_id');
+            $order-> user_id = $request->input('user_id');
+            $order-> order_no ='#'. $order_no;
+            $order ->save();
 
             DB::table('order_product')->insert([
                 'price' => $request->input('price'),
                 'quantity' => $request->input('quantity'),
                 'product_id' => $request->input('product_id'),
-                'order_id' =>$order->id,
+                'order_id' => $order->id,
             ]);
             // $order->products()->sync($request->product_id);
 
-            return response()->json(['status', true, 200, 'message' =>'Order created successfully']);
+            return response()->json(['status', true, 200, 'message' => 'Order created successfully']);
         } else {
-            return response()->json(['status', false, 401, 'message' =>' failed ']);
+            return response()->json(['status', false, 401, 'message' => ' failed ']);
         }
     }
 
@@ -96,8 +101,7 @@ class OrderController extends Controller
         //   return $order;
 
 
-        return response()->view('cms.orders.show',['orders'=>$order]);
-
+        return response()->view('cms.orders.show', ['orders' => $order]);
     }
 
     /**
@@ -132,7 +136,7 @@ class OrderController extends Controller
     public function destroy($id)
     {
         //
-        $isDeleted = Order::where('id',$id)->delete();
+        $isDeleted = Order::where('id', $id)->delete();
         if ($isDeleted) {
             return response()->json(['title' => 'Deleted!', 'message' => ' Deleted Successfully', 'icon' => 'success'], Response::HTTP_OK);
         } else {

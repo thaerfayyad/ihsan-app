@@ -5,9 +5,8 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 
 use App\Http\Controllers\CategoryController;
-
-
-
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FrontController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PdfController;
@@ -37,17 +36,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('switch.language');
 /*****************************************CMS ROUTES*********************************************************/
 Route::prefix('/dashboard')->middleware('auth:admin')->group(function () {
-Route::view('/', 'cms.parent');
+    Route::view('/', 'cms.parent');
 
     Route::resource('admins', AdminController::class);;
 
     Route::resource('categories', CategoryController::class);
-    Route::resource('products',ProductController::class);
-    Route::resource('orders',OrderController::class);
-    Route::resource('users',UserController::class);
-    Route::resource('roles',RoleController::class);
+    Route::resource('products', ProductController::class);
+    Route::resource('orders', OrderController::class);
+    Route::resource('users', UserController::class);
+    Route::resource('roles', RoleController::class);
+    Route::resource('contacts', ContactController::class);
     Route::resource('permissions', PermissionController::class);
-    Route::put('roles/{role}/permission', [RolePermissionController::class,'update'])->name('role-permission.update');
+    Route::put('roles/{role}/permission', [RolePermissionController::class, 'update'])->name('role-permission.update');
 
 
 
@@ -74,6 +74,11 @@ Route::prefix('/dashboard')->group(function () {  //->middleware('guest:admin')
     Route::post('login', [AuthController::class, 'login']);
 });
 
-Route::get('/generate-pdf',[PdfController::class ,'generate_pdf'])->name('generate_pdf');
-Route::get('/generate-pdf-order/{id}',[PdfController::class ,'generate_pdf_order'])->name('generate_pdf_order');
+Route::get('/generate-pdf', [PdfController::class, 'generate_pdf'])->name('generate_pdf');
+Route::get('/generate-pdf-order/{id}', [PdfController::class, 'generate_pdf_order'])->name('generate_pdf_order');
 
+
+// *****************Front Roue ***************/
+
+Route::get('/',[FrontController::class,'index']);
+Route::post('/contact-us',[FrontController::class,'contact_us'])->name('contact_us');
